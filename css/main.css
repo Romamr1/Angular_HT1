@@ -1,0 +1,48 @@
+.lists-container{
+  padding: 20px;
+  position: relative;
+}
+
+.list{
+    width: 200px;
+    background-color: #e3e3e3;
+    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid #999;
+    vertical-align: top;
+    position: relative;
+}
+
+.list h1{
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.list input{
+  margin-bottom:0;
+}
+
+.list.new-list{
+  background-color: #628DA4;
+}
+
+.list-inline{
+    display: inline-block;
+}
+
+[ng-cloak] {
+  display: none;
+}
+
+.remove	{
+    width: 15px;
+    height: 15px;
+    background: url( ../img/x.svg);
+}
+
+.remove-list{
+  position : absolute;
+  margin: 6px;  
+  top: 0;
+  right: 0;  
+}

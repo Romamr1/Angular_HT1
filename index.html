@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = "app">
+	<head>
+		<meta charset="utf-8">
+		<title>Home Task 1</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+	</head>
+
+	<body ng-cloak>
+		
+		<section class="lists-container" ng-controller = "listsCtrl as listsCtrl">
+			<div>
+				<label><input type="radio" name="typeOut" ng-click="listsCtrl.typeOut('all')">All</label>
+				<label><input type="radio" name="typeOut" ng-click="listsCtrl.typeOut('done')">Done</label>
+				<label><input type="radio" name="typeOut" checked="true" ng-click="listsCtrl.typeOut('todo')">To do</label>
+			</div>
+			<div>
+				
+				<section ng-repeat = "list in listsCtrl.lists" class="list list-inline" ng-show="!list.curentDone">
+						
+					<h1>{{list.listName}}</h1>
+					<a ng-click="listsCtrl.removeList(list.id);" class="hand">
+		        		<div class="remove remove-list"></div>
+		      		</a>
+		      		<label><input type="checkbox" name="check" ng-model = "list.done">done</label>
+		      			
+				</section>
+				
+				<section class="list new-list list-inline">
+      				<form ng-submit="listsCtrl.addList()">
+        				<input type="text" ng-model="listsCtrl.listName"/>
+      				</form>
+    			</section>
+			</div>
+		</section>
+		<script type="text/javascript" src = "node_modules/angular/angular.js"></script>
+		<script type="text/javascript" src = "js/index.js"></script>
+		<script type="text/javascript" src = "js/factories/listFactory.js"></script>
+		<script type="text/javascript" src = "js/ctrl/listsCtrl.js"></script>
+
+	</body>
+</html>
